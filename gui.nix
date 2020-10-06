@@ -20,5 +20,6 @@
     # desktop look & feel
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
+    gnomeExtensions.system-monitor
   ];
 }

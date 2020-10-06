@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     htop
     lm_sensors
+    neofetch
 
     # Input
     xorg.xmodmap
@@ -32,13 +33,19 @@
       be = "bundle exec";
       bi = "bundle install";
       rt = "RUBYOPT='-W0' bundle exec spring rspec";
+      re = "export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH";
+
+      # Projects
+      lms-compose = "cd ~/blueprint/learningplatform && docker-compose up";
+      lms-server = "cd ~/blueprint/learningplatform && nix-shell && bundle exec rails server";
+      lms-worker = "cd ~/blueprint/learningplatform && nix-shell && bundle exec sidekiq -v";
 
       # Input
       caps = "xdotool key Caps_Lock";
       sk = "xmodmap $HOME/.config/.Xmodmap";
     };
   };
-  
+
   programs.git = {
     enable = true;
     userName = "Sune Nilausen";
@@ -51,11 +58,15 @@
       f = "fetch";
       co = "checkout";
       r = "rebase";
+      ap = "add --patch";
+      lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+
 
       staged = "diff --cached";
-      unstage = "reset";
-      amend = "commit --amend";
-        
+      unstage = "reset HEAD";
+      amend = "commit --amend --no-edit";
+      last = "log -1 HEAD";
+
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
 
@@ -68,6 +79,7 @@
 
     extraConfig = {
       merge.conflictstyle = "diff3";
+      push.default = "current";
     };
   };
 
