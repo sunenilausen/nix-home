@@ -10,7 +10,7 @@ in
       "tap-to-click" = true;
       "two-finger-scrolling-enabled" = true;
     };
-    
+
     "org/gnome/control-center" = {
       "last-panel" = "display";
     };
@@ -78,7 +78,7 @@ in
     };
 
     "org/gnome/desktop/session" = {
-      "idle-delay" = 0;
+      "idle-delay" = "uint32 3000";  # Does not seem to work
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -176,5 +176,16 @@ in
       "selected-color" = mkTuple [ true 0.1803921568627451 ];
     };
 
+    "org/gnome/shell/keybindings" = {
+      "switch-to-application-1" = "@as []";  # Does not seem to work
+      "switch-to-application-2" = "@as []";
+      "switch-to-application-3" = "@as []";
+      "switch-to-application-4" = "@as []";
+      "switch-to-application-5" = "@as []";
+      "switch-to-application-6" = "@as []";
+      "switch-to-application-7" = "@as []";
+      "switch-to-application-8" = "@as []";
+      "switch-to-application-9" = "@as []";
+    };
   };
 }

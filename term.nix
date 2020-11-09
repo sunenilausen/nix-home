@@ -23,6 +23,7 @@
       # Nix
       ns = "nix-shell";
       nb = "nix-build";
+      nr = "nixos-rebuild switch";
       ne = "nano /etc/nixos/configuration.nix";
 
       # Home manager
@@ -37,8 +38,12 @@
 
       # Projects
       lms-compose = "cd ~/blueprint/learningplatform && docker-compose up";
-      lms-server = "cd ~/blueprint/learningplatform && nix-shell && bundle exec rails server";
-      lms-worker = "cd ~/blueprint/learningplatform && nix-shell && bundle exec sidekiq -v";
+      lms-server = "cd ~/blueprint/learningplatform && nix-shell --run 'bundle exec rails server'";
+      lms-worker = "cd ~/blueprint/learningplatform && nix-shell --run 'bundle exec sidekiq -v'";
+      lms-logs = "heroku logs --tail -a bp-lms-production";
+      lms-console = "heroku run console -a bp-lms-production";
+      lms-staging-logs = "heroku logs --tail -a bp-lms-staging";
+      lms-staging-console = "heroku run console -a bp-lms-staging";
 
       # Input
       caps = "xdotool key Caps_Lock";
@@ -60,6 +65,7 @@
       r = "rebase";
       ap = "add --patch";
       lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      ld = "git diff HEAD^ HEAD";
 
 
       staged = "diff --cached";
