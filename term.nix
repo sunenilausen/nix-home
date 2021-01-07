@@ -48,6 +48,26 @@
       # Input
       caps = "xdotool key Caps_Lock";
       sk = "xmodmap $HOME/.config/.Xmodmap";
+
+      # System
+      sp = "systemctl suspend";
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+
+    settings = {
+      character = {
+        symbol = "➜";
+        error_symbol = "✗";
+        use_symbol_for_status = true;
+      };
+      nix_shell.disabled = true;
+      cmd_duration.show_milliseconds = true;
+      username.disabled = true;
+      package.disabled = true;
+      aws.disabled = true;
     };
   };
 
@@ -60,6 +80,7 @@
       s = "status";
       c = "commit";
       d = "diff";
+      #sh = "git show HEAD^:";
       f = "fetch";
       co = "checkout";
       r = "rebase";

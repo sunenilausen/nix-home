@@ -8,7 +8,7 @@
   # paths it should manage.
   home.username = "sune";
   home.homeDirectory = "/home/sune";
-  
+
   imports = [
     ./gui.nix
     ./term.nix
