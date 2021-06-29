@@ -16,6 +16,7 @@
     heroku
     gimp
     libreoffice
+    remmina
 
     # desktop look & feel
     gnome3.gnome-tweak-tool

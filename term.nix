@@ -51,6 +51,7 @@
 
       # System
       sp = "systemctl suspend";
+      shi = "systemctl hibernate";
     };
   };
 

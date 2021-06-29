@@ -78,7 +78,7 @@ in
     };
 
     "org/gnome/desktop/session" = {
-      "idle-delay" = 3000;  # Does not seem to work
+      "idle-delay" = (lib.hm.gvariant.mkUint32 3000);
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -177,15 +177,15 @@ in
     };
 
     "org/gnome/shell/keybindings" = {
-      "switch-to-application-1" = "['']";  # Does this work?
-      "switch-to-application-2" = "@as []"; # Does this work?
-      "switch-to-application-3" = "[]"; # Does this work?
-      "switch-to-application-4" = []; # Does this work?
-      "switch-to-application-5" = ""; # Does this work?
-      "switch-to-application-6" = "@as []";
-      "switch-to-application-7" = "@as []";
-      "switch-to-application-8" = "@as []";
-      "switch-to-application-9" = "@as []";
+      "switch-to-application-1" = [];
+      "switch-to-application-2" = [];
+      "switch-to-application-3" = [];
+      "switch-to-application-4" = [];
+      "switch-to-application-5" = [];
+      "switch-to-application-6" = [];
+      "switch-to-application-7" = [];
+      "switch-to-application-8" = [];
+      "switch-to-application-9" = [];
     };
   };
 }
