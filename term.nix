@@ -13,6 +13,11 @@
     nix-index
   ];
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.bash = {
     enable = true;
 
@@ -52,6 +57,9 @@
       # System
       sp = "systemctl suspend";
       shi = "systemctl hibernate";
+
+      # Docker
+      dcu = "docker-compose up";
     };
   };
 
@@ -89,11 +97,12 @@
       lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       ld = "git diff HEAD^ HEAD";
 
-
       staged = "diff --cached";
       unstage = "reset HEAD";
       amend = "commit --amend --no-edit";
       last = "log -1 HEAD";
+      latest-branch = "branch --sort=-committerdate";
+      prune = "branch | grep -v 'master\|staging' | xargs git branch -D ";
 
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";

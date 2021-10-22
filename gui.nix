@@ -17,6 +17,7 @@
     gimp
     libreoffice
     remmina
+    obs-studio
 
     # desktop look & feel
     gnome3.gnome-tweak-tool
