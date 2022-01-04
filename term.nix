@@ -102,7 +102,7 @@
       amend = "commit --amend --no-edit";
       last = "log -1 HEAD";
       latest-branch = "branch --sort=-committerdate";
-      prune = "branch | grep -v 'master\|staging' | xargs git branch -D ";
+      prune-branches = "branch | grep -v 'master\|staging' | xargs git branch -D ";
 
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
