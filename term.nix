@@ -103,6 +103,7 @@
       last = "log -1 HEAD";
       latest-branch = "branch --sort=-committerdate";
       prune-branches = "branch | grep -v 'master\|staging' | xargs git branch -D ";
+      stashmod = "stash push --keep-index"
 
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
