@@ -104,7 +104,7 @@
       latest-branch = "branch --sort=-committerdate";
       prune-branches = "branch | grep -v 'master\|staging' | xargs git branch -D ";
       stashmod = "stash push --keep-index";
-      filestashes = "git stash list --color=always --pretty='%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs' --name-only"
+      filestashes = "git stash list --color=always --pretty='%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs' --name-only";
 
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
